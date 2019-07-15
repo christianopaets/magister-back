@@ -13,6 +13,6 @@ export class GroupController {
 
   @Get('/groups')
   get(): Promise<Group[]> {
-    return this.postRepository.find();
+    return this.postRepository.find({ relations: ['students'] });
   }
 }
